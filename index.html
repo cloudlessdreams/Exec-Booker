@@ -8,15 +8,25 @@
 
 	<title>Transfers - Home</title>
 
+
+
 	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/theme-beige.css" />
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/jquery-ui.theme.css" />
 	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/style.css" />
 	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/animate.css" />
 	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/icons.css" />
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/images/favicon.ico" />
-	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/results.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,44 +39,54 @@
   <body class="home">
 
 
+
 	<!-- Main -->
 	<main class="main" role="main">
 
 		<!-- Search -->
 		<div class="advanced-search color" id="booking">
 			<div class="wrap">
-				<form role="form" action="select-car.php" method="post">
+
+				<form role="form" action="search-results.html" method="POST" >
 					<!-- Row -->
 					<div class="f-row">
-						<div class="form-group datepicker one-third">
-							<label for="dep-date">Departure date and time</label>
-							<input type="text" id="dep-date" />
+
+            <div class="form-group col-md-4">
+							<label> Departure date & time</label>
+              <input type="text" id="datetimepick">
 						</div>
-						<div class="form-group select one-third">
+
+						<div class="form-group col-md-4">
 							<label>Pick up location</label>
-              <input type="text" id="pickup" />
+              <input type="text" id="pickup" name="pickup" />
 						</div>
-						<div class="form-group select one-third">
+
+            <div class="form-group col-md-4" style="padding-right: 15px;">
 							<label>Drop off location</label>
-              <input type="text" id="destination" />
+              <input type="text" id="destination" name="destination"/>
 						</div>
+
 					</div>
 					<!-- //Row -->
 
 					<!-- Row -->
-					<div class="f-row">
-						<div class="form-group datepicker one-third">
-							<label for="ret-date">Return date and time</label>
-							<input type="text" id="ret-date" />
+          <div class="f-row">
+
+            <div class="form-group col-md-4">
+							<label> Return date & time</label>
+              <input type="text" id="datetimepick2" name="datetimepick2">
 						</div>
-						<div class="form-group select one-third">
+
+						<div class="form-group col-md-4">
 							<label>Pick up location</label>
-              <input type="text" id="rtn-pickup" />
+              <input type="text" id="rtn-pickup" name="rtn-pickup" />
 						</div>
-						<div class="form-group select one-third">
+
+            <div class="form-group col-md-4" style="padding-right: 15px;">
 							<label>Drop off location</label>
-              <input type="text" id="rtn-departure" />
+              <input type="text" id="rtn-destination" name="rtn-destination" />
 						</div>
+
 					</div>
 					<!-- //Row -->
 
@@ -87,7 +107,8 @@
 							</div>
 						</div>
 						<div class="form-group right">
-							<button type="submit" class="btn large black">Find a Vehicle</button>
+
+							<button type="submit" class="btn large black" onclick="handleSubmit()">Find a Vehicle </button>
 						</div>
 					</div>
 					<!--// Row -->
@@ -101,15 +122,112 @@
 	</main>
 	<!-- //Main -->
 
-
 	 <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.ui.timepicker.addon/1.5.6/jquery-ui-timepicker-addon.min.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.ui.timepicker.addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
+
 	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/jquery.uniform.min.js"></script>
 	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/jquery.slicknav.min.js"></script>
 	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/wow.min.js"></script>
 	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/jquery-ui-sliderAccess.js"></script>
-	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/search.js"></script>
+	<script src="js/search.js"></script>
 	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/scripts.js"></script>
+
+  <script type="text/javascript" >
+  $(function(){
+    $('#datetimepick').datetimepicker()
+  })
+
+  $(function(){
+    $('#datetimepick2').datetimepicker()
+  })
+
+  </script>
+
+
+<script>
+var placeSearch, autocomplete;
+
+
+function initAutocomplete() {
+  var inputFrom = document.getElementById('pickup');
+
+  var inputTo = document.getElementById('destination');
+
+  var rtnFrom = document.getElementById('rtn-pickup');
+
+  var rtnTo = document.getElementById('rtn-destination');
+
+  var defaultBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(52.136436, -0.460739));
+
+  // Create the autocomplete object
+  var options = {
+    bounds: defaultBounds,
+    types: [],
+    radius: 30000,
+    componentRestrictions: {country: 'GB'}
+  };
+
+  var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom,options);
+
+  var autocompleteTo = new google.maps.places.Autocomplete(inputTo,options);
+
+  var autocompletertnFrom = new google.maps.places.Autocomplete(rtnFrom,options);
+
+  var autocompletertnTo = new google.maps.places.Autocomplete(rtnTo,options);
+
+  if (autocomplete) {
+    // Avoid paying for data that you don't need by restricting the set of
+    // place fields that are returned to just the address components.1
+    autocomplete.setFields(['address_component', ]);
+
+    // When the user selects an address from the drop-down, populate the
+    // address fields in the form.
+    autocomplete.addListener('place_changed', fillInAddress);
+  }
+
+  // // Hide results when click occurs out of the results and inputs
+  // google.maps.event.addDomListener(document, 'click', function(e) {
+	// 	if (!e.target.parentElement) { return; }
+  //
+	// 	if ((e.target.parentElement.className !== 'pac-container') && (e.target.parentElement.className !== 'pac-item') && (e.target.tagName !== 'INPUT')) {
+  //     hidePopularLocations();
+  //   }
+  // });
+
+}
+
+function fillInAddress() {
+
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+    document.getElementById(component).disabled = false;
+  }
+
+  // Get each component of the address from the place details,
+  // and then fill-in the corresponding field on the form.
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
+  }
+}
+
+
+
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE&libraries=places&callback=initAutocomplete" async defer></script>
+
+
+
   </body>

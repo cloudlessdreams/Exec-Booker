@@ -9,15 +9,24 @@
 
 	<title>Exec - Search results</title>
 
-	<link rel="stylesheet" href="css/theme-pink.css" />
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" href="css/jquery-ui.theme.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/icons.css" />
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Montserrat:400,700">
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
+
+  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/theme-beige.css" />
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/jquery-ui.theme.css" />
+  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/style.css" />
+  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/animate.css" />
+  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/icons.css" />
+  	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  	<link rel="shortcut icon" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="js/results.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,313 +39,51 @@
   <body>
 	<!-- Main -->
 	<main class="main" role="main">
-		<!-- Search -->
-		<div class="advanced-search color">
+
+
+    <!-- Search -->
+		<div class="advanced-search color" id="booking">
 			<div class="wrap">
-				<form role="form">
+				<form role="form" action="search-results.html" method="post">
 					<!-- Row -->
 					<div class="f-row">
-						<div class="form-group datepicker one-third">
-							<label for="dep-date">Departure date and time</label>
-							<input type="text" id="dep-date" value="28/08/2014" />
+
+            <div class="form-group col-md-4">
+							<label> Departure date & time</label>
+              <input type="text" id="datetimepick" value="">
 						</div>
-						<div class="form-group select one-third">
+
+						<div class="form-group col-md-4">
 							<label>Pick up location</label>
-							<select>
-								<option>Select location</option>
-								<optgroup label="Germany">
-									<option value="Berlin Central Train Station">Berlin Central Train Station</option>
-									<option value="Berlin Schonefeld Airport" selected>Berlin Schonefeld Airport</option>
-									<option value="Berlin Tegel Airport">Berlin Tegel Airport</option>
-									<option value="Bremen Airport">Bremen Airport</option>
-									<option value="Cologne Bonn Airport">Cologne Bonn Airport</option>
-									<option value="Dortmund Airport">Dortmund Airport</option>
-									<option value="Dresden Airport">Dresden Airport</option>
-									<option value="Dusseldorf Airport">Dusseldorf Airport</option>
-									<option value="Frankfurt Hahn Airport">Frankfurt Hahn Airport</option>
-									<option value="Frankfurt International Airport">Frankfurt International Airport</option>
-									<option value="Friedrichshafen Airport">Friedrichshafen Airport</option>
-									<option value="Hamburg Finkenwerder Airport">Hamburg Finkenwerder Airport</option>
-									<option value="Hamburg Port">Hamburg Port</option>
-									<option value="Hamburg-Fuhlsbuttel Airport">Hamburg-Fuhlsbuttel Airport</option>
-									<option value="Hanover Lengenhagen Airport">Hanover Lengenhagen Airport</option>
-									<option value="Kiel Port">Kiel Port</option>
-									<option value="Leipzig Halle Airport">Leipzig Halle Airport</option>
-									<option value="Munich Airport">Munich Airport</option>
-									<option value="Nuremberg Airport">Nuremberg Airport</option>
-								</optgroup>
-								<optgroup label="Italy">
-									<option value="Alghero Airport">Alghero Airport</option>
-									<option value="Bari Airport">Bari Airport</option>
-									<option value="Bari Port">Bari Port</option>
-									<option value="Bergamo Airport">Bergamo Airport</option>
-									<option value="Bologna Airport">Bologna Airport</option>
-									<option value="Brindisi Airport">Brindisi Airport</option>
-									<option value="Cagliari Airport">Cagliari Airport</option>
-									<option value="Florence Airport">Florence Airport</option>
-									<option value="Florence Train Station">Florence Train Station</option>
-									<option value="Genoa Airport">Genoa Airport</option>
-									<option value="Genoa Port">Genoa Port</option>
-									<option value="Milan Central Train Station">Milan Central Train Station</option>
-									<option value="Milan City Centre">Milan City Centre</option>
-									<option value="Naples Airport">Naples Airport</option>
-								</optgroup>
-								<optgroup label="Spain">
-									<option value="Alicante Airport">Alicante Airport</option>
-									<option value="Almeria Airport">Almeria Airport</option>
-									<option value="Barcelona Airport">Barcelona Airport</option>
-									<option value="Granada Airport">Granada Airport</option>
-									<option value="Jerez de la Frontera">Jerez de la Frontera</option>
-									<option value="Leon Airport">Leon Airport</option>
-									<option value="Madrid Atocha Train Station">Madrid Atocha Train Station</option>
-									<option value="Madrid Barajas Airport">Madrid Barajas Airport</option>
-									<option value="Pamplona Airport">Pamplona Airport</option>
-									<option value="Santander Airport">Santander Airport</option>
-									<option value="Seville Airport">Seville Airport</option>
-									<option value="Valencia Airport">Valencia Airport</option>
-									<option value="Zaragoza Airport">Zaragoza Airport</option>
-								</optgroup>
-								<optgroup label="United Kingdom">
-									<option value="Belfast City Airport">Belfast City Airport</option>
-									<option value="Belfast International Airport">Belfast International Airport</option>
-									<option value="Bristol Airport">Bristol Airport</option>
-									<option value="Cardiff Airport">Cardiff Airport</option>
-									<option value="Edinburgh Airport">Edinburgh Airport</option>
-									<option value="Glasgow International Airport">Glasgow International Airport</option>
-									<option value="London City Airport">London City Airport</option>
-									<option value="London Gatwick Airport">London Gatwick Airport</option>
-									<option value="London Heathrow Airport">London Heathrow Airport</option>
-									<option value="London Stansted Airport">London Stansted Airport</option>
-									<option value="Manchester Airport">Manchester Airport</option>
-									<option value="Southampton Airport">Southampton Airport</option>
-								</optgroup>
-							</select>
+              <input type="text" id="pickup" />
 						</div>
-						<div class="form-group select one-third">
+
+            <div class="form-group col-md-4" style="padding-right: 15px;">
 							<label>Drop off location</label>
-							<select>
-								<option>Select location</option>
-								<optgroup label="Germany">
-									<option value="Berlin Central Train Station" selected>Berlin Central Train Station</option>
-									<option value="Berlin Schonefeld Airport">Berlin Schonefeld Airport</option>
-									<option value="Berlin Tegel Airport">Berlin Tegel Airport</option>
-									<option value="Bremen Airport">Bremen Airport</option>
-									<option value="Cologne Bonn Airport">Cologne Bonn Airport</option>
-									<option value="Dortmund Airport">Dortmund Airport</option>
-									<option value="Dresden Airport">Dresden Airport</option>
-									<option value="Dusseldorf Airport">Dusseldorf Airport</option>
-									<option value="Frankfurt Hahn Airport">Frankfurt Hahn Airport</option>
-									<option value="Frankfurt International Airport">Frankfurt International Airport</option>
-									<option value="Friedrichshafen Airport">Friedrichshafen Airport</option>
-									<option value="Hamburg Finkenwerder Airport">Hamburg Finkenwerder Airport</option>
-									<option value="Hamburg Port">Hamburg Port</option>
-									<option value="Hamburg-Fuhlsbuttel Airport">Hamburg-Fuhlsbuttel Airport</option>
-									<option value="Hanover Lengenhagen Airport">Hanover Lengenhagen Airport</option>
-									<option value="Kiel Port">Kiel Port</option>
-									<option value="Leipzig Halle Airport">Leipzig Halle Airport</option>
-									<option value="Munich Airport">Munich Airport</option>
-									<option value="Nuremberg Airport">Nuremberg Airport</option>
-								</optgroup>
-								<optgroup label="Italy">
-									<option value="Alghero Airport">Alghero Airport</option>
-									<option value="Bari Airport">Bari Airport</option>
-									<option value="Bari Port">Bari Port</option>
-									<option value="Bergamo Airport">Bergamo Airport</option>
-									<option value="Bologna Airport">Bologna Airport</option>
-									<option value="Brindisi Airport">Brindisi Airport</option>
-									<option value="Cagliari Airport">Cagliari Airport</option>
-									<option value="Florence Airport">Florence Airport</option>
-									<option value="Florence Train Station">Florence Train Station</option>
-									<option value="Genoa Airport">Genoa Airport</option>
-									<option value="Genoa Port">Genoa Port</option>
-									<option value="Milan Central Train Station">Milan Central Train Station</option>
-									<option value="Milan City Centre">Milan City Centre</option>
-									<option value="Naples Airport">Naples Airport</option>
-								</optgroup>
-								<optgroup label="Spain">
-									<option value="Alicante Airport">Alicante Airport</option>
-									<option value="Almeria Airport">Almeria Airport</option>
-									<option value="Barcelona Airport">Barcelona Airport</option>
-									<option value="Granada Airport">Granada Airport</option>
-									<option value="Jerez de la Frontera">Jerez de la Frontera</option>
-									<option value="Leon Airport">Leon Airport</option>
-									<option value="Madrid Atocha Train Station">Madrid Atocha Train Station</option>
-									<option value="Madrid Barajas Airport">Madrid Barajas Airport</option>
-									<option value="Pamplona Airport">Pamplona Airport</option>
-									<option value="Santander Airport">Santander Airport</option>
-									<option value="Seville Airport">Seville Airport</option>
-									<option value="Valencia Airport">Valencia Airport</option>
-									<option value="Zaragoza Airport">Zaragoza Airport</option>
-								</optgroup>
-								<optgroup label="United Kingdom">
-									<option value="Belfast City Airport">Belfast City Airport</option>
-									<option value="Belfast International Airport">Belfast International Airport</option>
-									<option value="Bristol Airport">Bristol Airport</option>
-									<option value="Cardiff Airport">Cardiff Airport</option>
-									<option value="Edinburgh Airport">Edinburgh Airport</option>
-									<option value="Glasgow International Airport">Glasgow International Airport</option>
-									<option value="London City Airport">London City Airport</option>
-									<option value="London Gatwick Airport">London Gatwick Airport</option>
-									<option value="London Heathrow Airport">London Heathrow Airport</option>
-									<option value="London Stansted Airport">London Stansted Airport</option>
-									<option value="Manchester Airport">Manchester Airport</option>
-									<option value="Southampton Airport">Southampton Airport</option>
-								</optgroup>
-							</select>
+              <input type="text" id="destination" />
 						</div>
+
 					</div>
 					<!-- //Row -->
 
 					<!-- Row -->
-					<div class="f-row">
-						<div class="form-group datepicker one-third">
-							<label for="ret-date">Return date and time</label>
-							<input type="text" id="ret-date" value="02/09/2014" />
+          <div class="f-row">
+
+            <div class="form-group col-md-4">
+							<label> Return date & time</label>
+              <input type="text" id="datetimepick2" value="">
 						</div>
-						<div class="form-group select one-third">
+
+						<div class="form-group col-md-4">
 							<label>Pick up location</label>
-							<select>
-								<option>Select location</option>
-								<optgroup label="Germany">
-									<option value="Berlin Central Train Station" selected>Berlin Central Train Station</option>
-									<option value="Berlin Schonefeld Airport">Berlin Schonefeld Airport</option>
-									<option value="Berlin Tegel Airport">Berlin Tegel Airport</option>
-									<option value="Bremen Airport">Bremen Airport</option>
-									<option value="Cologne Bonn Airport">Cologne Bonn Airport</option>
-									<option value="Dortmund Airport">Dortmund Airport</option>
-									<option value="Dresden Airport">Dresden Airport</option>
-									<option value="Dusseldorf Airport">Dusseldorf Airport</option>
-									<option value="Frankfurt Hahn Airport">Frankfurt Hahn Airport</option>
-									<option value="Frankfurt International Airport">Frankfurt International Airport</option>
-									<option value="Friedrichshafen Airport">Friedrichshafen Airport</option>
-									<option value="Hamburg Finkenwerder Airport">Hamburg Finkenwerder Airport</option>
-									<option value="Hamburg Port">Hamburg Port</option>
-									<option value="Hamburg-Fuhlsbuttel Airport">Hamburg-Fuhlsbuttel Airport</option>
-									<option value="Hanover Lengenhagen Airport">Hanover Lengenhagen Airport</option>
-									<option value="Kiel Port">Kiel Port</option>
-									<option value="Leipzig Halle Airport">Leipzig Halle Airport</option>
-									<option value="Munich Airport">Munich Airport</option>
-									<option value="Nuremberg Airport">Nuremberg Airport</option>
-								</optgroup>
-								<optgroup label="Italy">
-									<option value="Alghero Airport">Alghero Airport</option>
-									<option value="Bari Airport">Bari Airport</option>
-									<option value="Bari Port">Bari Port</option>
-									<option value="Bergamo Airport">Bergamo Airport</option>
-									<option value="Bologna Airport">Bologna Airport</option>
-									<option value="Brindisi Airport">Brindisi Airport</option>
-									<option value="Cagliari Airport">Cagliari Airport</option>
-									<option value="Florence Airport">Florence Airport</option>
-									<option value="Florence Train Station">Florence Train Station</option>
-									<option value="Genoa Airport">Genoa Airport</option>
-									<option value="Genoa Port">Genoa Port</option>
-									<option value="Milan Central Train Station">Milan Central Train Station</option>
-									<option value="Milan City Centre">Milan City Centre</option>
-									<option value="Naples Airport">Naples Airport</option>
-								</optgroup>
-								<optgroup label="Spain">
-									<option value="Alicante Airport">Alicante Airport</option>
-									<option value="Almeria Airport">Almeria Airport</option>
-									<option value="Barcelona Airport">Barcelona Airport</option>
-									<option value="Granada Airport">Granada Airport</option>
-									<option value="Jerez de la Frontera">Jerez de la Frontera</option>
-									<option value="Leon Airport">Leon Airport</option>
-									<option value="Madrid Atocha Train Station">Madrid Atocha Train Station</option>
-									<option value="Madrid Barajas Airport">Madrid Barajas Airport</option>
-									<option value="Pamplona Airport">Pamplona Airport</option>
-									<option value="Santander Airport">Santander Airport</option>
-									<option value="Seville Airport">Seville Airport</option>
-									<option value="Valencia Airport">Valencia Airport</option>
-									<option value="Zaragoza Airport">Zaragoza Airport</option>
-								</optgroup>
-								<optgroup label="United Kingdom">
-									<option value="Belfast City Airport">Belfast City Airport</option>
-									<option value="Belfast International Airport">Belfast International Airport</option>
-									<option value="Bristol Airport">Bristol Airport</option>
-									<option value="Cardiff Airport">Cardiff Airport</option>
-									<option value="Edinburgh Airport">Edinburgh Airport</option>
-									<option value="Glasgow International Airport">Glasgow International Airport</option>
-									<option value="London City Airport">London City Airport</option>
-									<option value="London Gatwick Airport">London Gatwick Airport</option>
-									<option value="London Heathrow Airport">London Heathrow Airport</option>
-									<option value="London Stansted Airport">London Stansted Airport</option>
-									<option value="Manchester Airport">Manchester Airport</option>
-									<option value="Southampton Airport">Southampton Airport</option>
-								</optgroup>
-							</select>
+              <input type="text" id="rtn-pickup" />
 						</div>
-						<div class="form-group select one-third">
+
+            <div class="form-group col-md-4" style="padding-right: 15px;">
 							<label>Drop off location</label>
-							<select>
-								<option>Select location</option>
-								<optgroup label="Germany">
-									<option value="Berlin Central Train Station">Berlin Central Train Station</option>
-									<option value="Berlin Schonefeld Airport" selected>Berlin Schonefeld Airport</option>
-									<option value="Berlin Tegel Airport">Berlin Tegel Airport</option>
-									<option value="Bremen Airport">Bremen Airport</option>
-									<option value="Cologne Bonn Airport">Cologne Bonn Airport</option>
-									<option value="Dortmund Airport">Dortmund Airport</option>
-									<option value="Dresden Airport">Dresden Airport</option>
-									<option value="Dusseldorf Airport">Dusseldorf Airport</option>
-									<option value="Frankfurt Hahn Airport">Frankfurt Hahn Airport</option>
-									<option value="Frankfurt International Airport">Frankfurt International Airport</option>
-									<option value="Friedrichshafen Airport">Friedrichshafen Airport</option>
-									<option value="Hamburg Finkenwerder Airport">Hamburg Finkenwerder Airport</option>
-									<option value="Hamburg Port">Hamburg Port</option>
-									<option value="Hamburg-Fuhlsbuttel Airport">Hamburg-Fuhlsbuttel Airport</option>
-									<option value="Hanover Lengenhagen Airport">Hanover Lengenhagen Airport</option>
-									<option value="Kiel Port">Kiel Port</option>
-									<option value="Leipzig Halle Airport">Leipzig Halle Airport</option>
-									<option value="Munich Airport">Munich Airport</option>
-									<option value="Nuremberg Airport">Nuremberg Airport</option>
-								</optgroup>
-								<optgroup label="Italy">
-									<option value="Alghero Airport">Alghero Airport</option>
-									<option value="Bari Airport">Bari Airport</option>
-									<option value="Bari Port">Bari Port</option>
-									<option value="Bergamo Airport">Bergamo Airport</option>
-									<option value="Bologna Airport">Bologna Airport</option>
-									<option value="Brindisi Airport">Brindisi Airport</option>
-									<option value="Cagliari Airport">Cagliari Airport</option>
-									<option value="Florence Airport">Florence Airport</option>
-									<option value="Florence Train Station">Florence Train Station</option>
-									<option value="Genoa Airport">Genoa Airport</option>
-									<option value="Genoa Port">Genoa Port</option>
-									<option value="Milan Central Train Station">Milan Central Train Station</option>
-									<option value="Milan City Centre">Milan City Centre</option>
-									<option value="Naples Airport">Naples Airport</option>
-								</optgroup>
-								<optgroup label="Spain">
-									<option value="Alicante Airport">Alicante Airport</option>
-									<option value="Almeria Airport">Almeria Airport</option>
-									<option value="Barcelona Airport">Barcelona Airport</option>
-									<option value="Granada Airport">Granada Airport</option>
-									<option value="Jerez de la Frontera">Jerez de la Frontera</option>
-									<option value="Leon Airport">Leon Airport</option>
-									<option value="Madrid Atocha Train Station">Madrid Atocha Train Station</option>
-									<option value="Madrid Barajas Airport">Madrid Barajas Airport</option>
-									<option value="Pamplona Airport">Pamplona Airport</option>
-									<option value="Santander Airport">Santander Airport</option>
-									<option value="Seville Airport">Seville Airport</option>
-									<option value="Valencia Airport">Valencia Airport</option>
-									<option value="Zaragoza Airport">Zaragoza Airport</option>
-								</optgroup>
-								<optgroup label="United Kingdom">
-									<option value="Belfast City Airport">Belfast City Airport</option>
-									<option value="Belfast International Airport">Belfast International Airport</option>
-									<option value="Bristol Airport">Bristol Airport</option>
-									<option value="Cardiff Airport">Cardiff Airport</option>
-									<option value="Edinburgh Airport">Edinburgh Airport</option>
-									<option value="Glasgow International Airport">Glasgow International Airport</option>
-									<option value="London City Airport">London City Airport</option>
-									<option value="London Gatwick Airport">London Gatwick Airport</option>
-									<option value="London Heathrow Airport">London Heathrow Airport</option>
-									<option value="London Stansted Airport">London Stansted Airport</option>
-									<option value="Manchester Airport">Manchester Airport</option>
-									<option value="Southampton Airport">Southampton Airport</option>
-								</optgroup>
-							</select>
+              <input type="text" id="rtn-destination" />
 						</div>
+
 					</div>
 					<!-- //Row -->
 
@@ -344,7 +91,7 @@
 					<div class="f-row">
 						<div class="form-group spinner">
 							<label for="people">How many people <small>(including children)</small>?</label>
-							<input type="number" id="people" min="1" value="2"/>
+							<input type="number" id="people" min="1"  />
 						</div>
 						<div class="form-group radios">
 							<div>
@@ -357,7 +104,7 @@
 							</div>
 						</div>
 						<div class="form-group right">
-							<button type="submit" class="btn large black">Find a transfer</button>
+							<button type="submit" class="btn large black">Find a Vehicle</button>
 						</div>
 					</div>
 					<!--// Row -->
@@ -656,59 +403,6 @@
 	</main>
 	<!-- //Main -->
 
-	<!-- Footer -->
-	<footer class="footer black" role="contentinfo">
-		<div class="wrap">
-			<div class="row">
-				<!-- Column -->
-				<article class="one-half">
-					<h6>About us</h6>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-				</article>
-				<!-- //Column -->
-
-				<!-- Column -->
-				<article class="one-fourth">
-					<h6>Need help?</h6>
-					<p>Contact us via phone or email:</p>
-					<p class="contact-data"><span class="icon icon-themeenergy_call"></span> +1 555 555 555</p>
-					<p class="contact-data"><span class="icon icon-themeenergy_mail-2"></span> <a href="mailto:help@transfers.com">help@transfers.com</a></p>
-				</article>
-				<!-- //Column -->
-
-				<!-- Column -->
-				<article class="one-fourth">
-					<h6>Follow us</h6>
-					<ul class="social">
-						<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
-						<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-						<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
-						<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
-						<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
-						<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
-					</ul>
-				</article>
-				<!-- //Column -->
-			</div>
-
-			<div class="copy">
-				<p>Copyright 2016, Themeenergy. All rights reserved. </p>
-
-				<nav role="navigation" class="foot-nav">
-					<ul>
-						<li><a href="#" title="Home">Home</a></li>
-						<li><a href="#" title="Blog">Blog</a></li>
-						<li><a href="#" title="About us">About us</a></li>
-						<li><a href="#" title="Contact us">Contact us</a></li>
-						<li><a href="#" title="Terms of use">Terms of use</a></li>
-						<li><a href="#" title="Help">Help</a></li>
-						<li><a href="#" title="For partners">For partners</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</footer>
-	<!-- //Footer -->
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -720,5 +414,103 @@
 	<script src="js/jquery-ui-sliderAccess.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/scripts.js"></script>
+
+
+  <script type="text/javascript" >
+  $(function(){
+    $('#datetimepick').datetimepicker()
+  })
+
+  $(function(){
+    $('#datetimepick2').datetimepicker()
+  })
+
+  </script>
+
+
+<script>
+var placeSearch, autocomplete;
+
+
+function initAutocomplete() {
+  var inputFrom = document.getElementById('pickup');
+
+  var inputTo = document.getElementById('destination');
+
+  var rtnFrom = document.getElementById('rtn-pickup');
+
+  var rtnTo = document.getElementById('rtn-destination');
+
+  var defaultBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(52.136436, -0.460739));
+
+  // Create the autocomplete object
+  var options = {
+    bounds: defaultBounds,
+    types: [],
+    radius: 30000,
+    componentRestrictions: {country: 'GB'}
+  };
+
+  var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom,options);
+
+  var autocompleteTo = new google.maps.places.Autocomplete(inputTo,options);
+
+  var autocompletertnFrom = new google.maps.places.Autocomplete(rtnFrom,options);
+
+  var autocompletertnTo = new google.maps.places.Autocomplete(rtnTo,options);
+
+  if (autocomplete) {
+    // Avoid paying for data that you don't need by restricting the set of
+    // place fields that are returned to just the address components.1
+    autocomplete.setFields(['address_component', ]);
+
+    // When the user selects an address from the drop-down, populate the
+    // address fields in the form.
+    autocomplete.addListener('place_changed', fillInAddress);
+  }
+
+  // // Hide results when click occurs out of the results and inputs
+  // google.maps.event.addDomListener(document, 'click', function(e) {
+	// 	if (!e.target.parentElement) { return; }
+  //
+	// 	if ((e.target.parentElement.className !== 'pac-container') && (e.target.parentElement.className !== 'pac-item') && (e.target.tagName !== 'INPUT')) {
+  //     hidePopularLocations();
+  //   }
+  // });
+
+}
+
+function fillInAddress() {
+
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+    document.getElementById(component).disabled = false;
+  }
+
+  // Get each component of the address from the place details,
+  // and then fill-in the corresponding field on the form.
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
+  }
+}
+
+
+
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE&libraries=places&callback=initAutocomplete" async defer></script>
+
+
+
+
   </body>
 </html>
