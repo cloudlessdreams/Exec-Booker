@@ -10,14 +10,16 @@
 	<title>Exec - Search results</title>
 
 
-  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/theme-beige.css" />
-  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/jquery-ui.theme.css" />
-  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/style.css" />
-  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/animate.css" />
-  	<link rel="stylesheet" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/css/icons.css" />
-  	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
-  	<link rel="shortcut icon" href="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/images/favicon.ico" />
+
+    <link rel="stylesheet" href="css/theme-beige.css" />
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<link rel="stylesheet" href="css/jquery-ui.theme.css" />
+  	<link rel="stylesheet" href="css/style.css" />
+  	<link rel="stylesheet" href="css/animate.css" />
+  	<link rel="stylesheet" href="css/icons.css" />
+  	<link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  	<link rel="shortcut icon" href="images/favicon.ico" />
+  	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
@@ -291,7 +293,7 @@
 						<!-- //Item -->
 					</div>
 
-					<h2>Select transfer for your RETURN</h2>
+					<h2 class = 'hidden'>Select transfer for your RETURN</h2>
 
 					<div class="results">
 						<!-- Item -->
@@ -414,6 +416,8 @@
 	<script src="js/jquery-ui-sliderAccess.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/scripts.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE&libraries=places&callback=initAutocomplete" async defer></script>
 
 
   <script type="text/javascript" >
@@ -426,7 +430,6 @@
   })
 
   </script>
-
 
 <script>
 var placeSearch, autocomplete;
@@ -503,11 +506,14 @@ function fillInAddress() {
 }
 
 
+  axios.get('https://maps.googleapis.com/maps/api/distancematrix/json?origins=Boston,MA|Charlestown,MA&destinations=Lexington,MA|Concord,MA&departure_time=now&key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE')
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => console.error(error));
 
 </script>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE&libraries=places&callback=initAutocomplete" async defer></script>
 
 
 
