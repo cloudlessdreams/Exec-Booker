@@ -2,11 +2,11 @@
    <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="Transfers - Private Transport and Car Hire HTML Template" />
-	<meta name="description" content="Transfers - Private Transport and Car Hire HTML Template">
-	<meta name="author" content="themeenergy.com">
+	<meta name="keywords" content="A&M Chauffeur - Luxury chauffeur vehicles" />
+	<meta name="description" content="A&M Chauffeur - Luxury chauffeur vehicles">
+	<meta name="author" content="sahih.co.uk">
 
-	<title>Transfers - Home</title>
+	<title>A&M Chauffeur - Book</title>
 
 
 
@@ -38,6 +38,16 @@
   </head>
 
   <body class="home">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div id="followingBallsG">
+        <div id="followingBallsG_1" class="followingBallsG"></div>
+        <div id="followingBallsG_2" class="followingBallsG"></div>
+        <div id="followingBallsG_3" class="followingBallsG"></div>
+        <div id="followingBallsG_4" class="followingBallsG"></div>
+      </div>
+    </div>
+    <!-- //Preloader -->
 
 
 
@@ -47,6 +57,7 @@
 		<!-- Search -->
 		<div class="advanced-search color" id="booking">
 			<div class="wrap">
+
 
 				<form role="form" action="search-results.html" method="POST" >
 					<!-- Row -->
@@ -136,6 +147,8 @@
 	<script src="js/search.js"></script>
 	<script src="https://gitcdn.link/repo/cloudlessdreams/Exec-Booker/master/js/scripts.js"></script>
 
+
+
   <script type="text/javascript" >
   $(function(){
     $('#datetimepick').datetimepicker()
@@ -149,18 +162,21 @@
 
 
 <script>
+
 var placeSearch, autocomplete;
 
+// initMap is the entire API from which other specific methods like
+// initAutocomplete can be called but have to be initialised within the
+// initMap instead of the script src call
+
+//   // must initialise Autocomplete object here otherwise it isn't active
+//   initAutocomplete(); // initiate Auto complete instance
 
 function initAutocomplete() {
   var inputFrom = document.getElementById('pickup');
-
   var inputTo = document.getElementById('destination');
-
   var rtnFrom = document.getElementById('rtn-pickup');
-
   var rtnTo = document.getElementById('rtn-destination');
-
   var defaultBounds = new google.maps.LatLngBounds(
     new google.maps.LatLng(52.136436, -0.460739));
 
@@ -198,7 +214,6 @@ function initAutocomplete() {
   //     hidePopularLocations();
   //   }
   // });
-
 }
 
 function fillInAddress() {
@@ -222,13 +237,9 @@ function fillInAddress() {
   }
 }
 
-
-
 </script>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE&libraries=places&callback=initAutocomplete" async defer></script>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBxnTTldWa26EOjBaE05c3e2I3GGPFLE&libraries=places&callback=initAutocomplete" async defer></script>
 
 
   </body>
