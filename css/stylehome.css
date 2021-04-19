@@ -1,0 +1,246 @@
+/***************************
+	TABLE OF CONTENT
+	01 - Reset
+	02 - Global styles
+	03 - Typography
+	04 - Color specifics
+	05 - Layout
+	06 - Buttons
+	07 - Icons
+	08 - Header
+	09 - Home page
+	10 - Advanced search
+	11 - Booking steps
+	12 - Custom search results
+	13 - Main content
+	14 - Destinations
+	15 - Contact
+	16 - Blog
+	17 - Faq
+	18 - Error page
+	19 - Login, register, my account
+	20 - Sidebar
+	21 - Footer
+	22 - Form elements
+	23 - Preloader
+	24 - Plugin styles
+	25 - Print.css
+	26 - Css media querries (responsive css)
+
+****************************/
+
+
+/* 01 RESET */
+
+*,*:before,*:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+body {font:15px/1.42 'Raleway',Arial,Helvetica,sans-serif;text-align:center;color:#191F26;background:#EDEDDC;word-wrap:break-word;text-rendering:optimizeLegibility;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+html,body,div,small,form,label,input{border:0;margin:0;padding:0}
+html {overflow-y: scroll;-webkit-text-size-adjust:auto;-webkit-overflow-scrolling: touch;}
+
+input,button {font-family: inherit;font-size: inherit;line-height: inherit;}
+
+/* 02 GLOBAL STYLES */
+
+.color ::-moz-selection,.color::-moz-selection	{background:#191F26;}
+.color ::selection,.color::selection				{background:#191F26;}
+.right 		{float:right !important;}
+
+/* 03 TYPOGRAPHY */
+label,input,.btn		 {font-family: 'Montserrat', sans-serif;font-weight:400;}
+
+/* 04 COLOR SPECIFICS */
+.black	{background-color:#191F26 !important;}
+
+/* 05 LAYOUT */
+.wrap 		{margin:0 auto;width:1170px;text-align:left;position:relative;max-width:94%;display:inline-block;}
+
+/* 06 BUTTONS */
+.btn 		{border:none;text-transform:uppercase;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#fff !important;display:inline-block;text-align:center;max-width:100%;}
+.btn.large	{font-size:17px;width:200px;height:54px;line-height:54px;padding:0 14px;}
+.btn.black:hover,.btn.black:focus 	{background:#fff !important;color:#191F26 !important;}
+
+/* 07 ICONS */
+
+/* 08 HEADER */
+
+
+/* 09 HOME PAGE */
+.home .main 				{padding:0;}
+.home .advanced-search 	{margin:0;}
+
+
+/* 10 ADVANCED SEARCH */
+.advanced-search			{float:left;width:100%;font-size:15px;text-transform:uppercase;padding:35px 0 28px;margin:0 0 35px;border-bottom:1px solid #fff;}
+.advanced-search .f-row 				{margin:0 0 30px;padding:0 0 30px;border-bottom:1px solid rgba(0,0,0,.15);-webkit-box-shadow:0 1px 0 rgba(255,255,255,.3);-moz-box-shadow:0 1px 0 rgba(255,255,255,.3);box-shadow:0 1px 0 rgba(255,255,255,.3);}
+.advanced-search .f-row:last-child 	{margin:0;padding:0;border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+.advanced-search .form-group						{float:left;vertical-align:middle;}
+.advanced-search .form-group:first-of-type label,
+.advanced-search .f-row:last-child label 			{padding-left:0;}
+.advanced-search .form-group label 				{float:left;color:#fff;font-size:15px;}
+.advanced-search .form-group input 				{float:right;border-color:#fff;color:#191F26;}
+.advanced-search .form-group input:focus 			{border-color:#fff;}
+.advanced-search .right 	{width:23%;}
+.advanced-search .btn 	{width:100%;}
+.form-group.spinner				{width:35.1%;}
+.form-group.spinner label 			{line-height:47px;padding:0;}
+.form-group.spinner input			{width:16%;}
+.form-group.radios						{padding:11px 0 0 5.8%;width:28.9%;}
+.form-group.radios > div 					{float:left;}
+.form-group.radios > div:last-of-type 	{float:right;}
+.form-group.radios label					{line-height:25px;padding:0;}
+
+/* 11 BOOKING STEPS */
+
+/* 12 CUSTOM SEARCH RESULTS */
+
+/* 13 MAIN CONTENT */
+.main 		{float:left;width:100%;min-height:600px;padding:0 0 105px;overflow:hidden;max-width:100%;}
+
+
+/* 14 DESTINATIIONS */
+
+
+/* 15 CONTACT */
+
+/* 16 BLOG */
+
+
+/* 17 FAQ */
+
+
+/* 18 ERROR PAGE */
+
+/*19 LOGIN, REGISTER, MY ACCOUNT */
+
+/* 20 SIDEBAR */
+
+/* 21 FOOTER */
+
+
+/* 22 FORM ELEMENTS*/
+label 							{display:inline-block;cursor: pointer;color:#191F26;position:relative;font-size:13px;text-transform:uppercase;padding:0 0 17px 1px;}
+input 						{outline: none;}
+button, input 		{margin: 0;vertical-align: baseline; *vertical-align: middle;outline:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none; -webkit-transition:all 0.2s ease-in;-moz-transition:all 0.2s ease-in;-o-transition:all 0.2s ease-in;-ms-transition:all 0.2s ease-in;transition:all 0.2s ease-in;}
+button 				{border:none; cursor: pointer; text-transform:uppercase;-webkit-appearance: button; text-align:center;}
+input[type="radio"] 				{box-sizing: border-box; width:100%;height:100%;}
+input[type="text"],
+input[type="number"] 					{display:block;padding:12px 15px; font-size:15px;width:100%;border:1px solid #DFDFD0;color:#34394A;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0; }
+input[type=number] {-moz-appearance: textfield;}
+input[type="text"]:focus,
+input[type="number"]:focus 	{border-color:#bbb;}
+
+.f-row 							{float:left;width:100%;padding:0 0 25px;}
+.f-row:last-child				{padding-bottom:0;}
+.f-row div:last-child 	{padding-right:0;}
+
+/* 23 PRELOADER */
+.preloader			{background:#fff;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;}
+#followingBallsG	{position:relative;width:256px;height:20px;top:45%;left:43%;}
+.followingBallsG	{background-color:#191F26;position:absolute;top:0;left:0;width:20px;height:20px;-moz-border-radius:10px;-moz-animation-name:bounce_followingBallsG;-moz-animation-duration:2.3s;-moz-animation-iteration-count:infinite;-moz-animation-direction:linear;-webkit-border-radius:10px;-webkit-animation-name:bounce_followingBallsG;-webkit-animation-duration:2.3s;-webkit-animation-iteration-count:infinite;-webkit-animation-direction:linear;-ms-border-radius:10px;-ms-animation-name:bounce_followingBallsG;-ms-animation-duration:2.3s;-ms-animation-iteration-count:infinite;-ms-animation-direction:linear;-o-border-radius:10px;-o-animation-name:bounce_followingBallsG;-o-animation-duration:2.3s;-o-animation-iteration-count:infinite;-o-animation-direction:linear;border-radius:10px;animation-name:bounce_followingBallsG;animation-duration:2.3s;animation-iteration-count:infinite;animation-direction:linear;}
+#followingBallsG_1	{-moz-animation-delay:0s;-webkit-animation-delay:0s;-ms-animation-delay:0s;-o-animation-delay:0s;animation-delay:0s;}
+#followingBallsG_2	{-moz-animation-delay:0.23s;-webkit-animation-delay:0.23s;-ms-animation-delay:0.23s;-o-animation-delay:0.23s;animation-delay:0.23s;}
+#followingBallsG_3	{-moz-animation-delay:0.46s;-webkit-animation-delay:0.46s;-ms-animation-delay:0.46s;-o-animation-delay:0.46s;animation-delay:0.46s;}
+#followingBallsG_4	{-moz-animation-delay:0.69s;-webkit-animation-delay:0.69s;-ms-animation-delay:0.69s;-o-animation-delay:0.69s;animation-delay:0.69s;}
+
+@-moz-keyframes bounce_followingBallsG{
+0%		{left:0px;background-color:#191F26;}
+50%		{left:236px;background-color:#fff;}
+100%	{left:0px;background-color:#191F26;}
+}
+
+@-webkit-keyframes bounce_followingBallsG{
+0%		{left:0px;background-color:#191F26;}
+50%		{left:236px;background-color:#fff;}
+100%	{left:0px;background-color:#191F26;}
+}
+
+@-ms-keyframes bounce_followingBallsG{
+0%		{left:0px;background-color:#191F26;}
+50%		{left:236px;background-color:#fff;}
+100%	{left:0px;background-color:#191F26;}
+}
+
+@-o-keyframes bounce_followingBallsG{
+0%		{left:0px;background-color:#191F26;}
+50%		{left:236px;background-color:#fff;}
+100%	{left:0px;background-color:#191F26;}
+}
+
+@keyframes bounce_followingBallsG{
+0%		{left:0px;background-color:#191F26;}
+50%		{left:236px;background-color:#fff;}
+100%	{left:0px;background-color:#191F26;}
+}
+
+/* 24 PLUGINS */
+
+/* Uniform */
+
+/* General settings */
+
+/* Input & Textarea */
+
+/* Remove default webkit and possible mozilla .search styles.
+ * Keeping this as :active to remove browser styles */
+
+/* Select */
+
+/* Checkbox */
+
+/* Radio */
+
+/* Date & Time Picker */
+
+
+/* Slicknav Mobile Menu Core Style */
+
+/* 25 PRINT CSS*/
+@media print {
+  * {color: #000;text-shadow: none;background: transparent;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-size:10pt;}
+}
+
+
+/* 26 Responsiveness */
+
+@media screen and (max-width: 1200px) {
+.wrap 	{width:94%;}
+.advanced-search .form-group.spinner		{width:45%;}
+.advanced-search .form-group.spinner label {width:auto;line-height:47px;padding:0 30px 0 0;}
+.advanced-search .form-group.spinner input {width:16%;float:left;}
+.advanced-search .form-group.radios		{padding-left:0;width:30%;}
+.advanced-search .form-group.right 		{width:25%;padding:0;}
+.form-group.radios > div:last-of-type	{float:left;padding-left:30px;}
+}
+
+@media screen and (max-width: 1040px) {
+
+
+.advanced-search .form-group.spinner,
+.advanced-search .form-group.radios	 {width:66.6667%;}
+.advanced-search .form-group.radios 	{padding-top:20px;}
+.advanced-search .form-group.right	{width:33.3333%;}
+}
+
+
+@media screen and (max-width: 980px) {
+.wrap {width:92%;}
+
+.f-row	{padding:0;}
+
+
+.advanced-search .form-group.spinner,
+.advanced-search .form-group.radios	{width:100%;padding:0 0 30px;float:right;}
+.advanced-search .form-group.right	{width:100%;padding:0 0 30px;float:left;}
+}
+
+@media screen and (max-width: 800px) {
+
+.preloader	{display:none;}
+}
+
+@media screen and (max-width: 500px) {
+.advanced-search .form-group.spinner input {width:100%;}
+}
