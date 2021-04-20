@@ -43,7 +43,7 @@
 		<header class="site-title color">
 			<div class="wrap">
 				<div class="container">
-					<h1>Thank you. Your booking is now confirmed.</h1>
+					<h1>Thank you. Your booking is now confirmed. We will be in touch very shortly</h1>
 				</div>
 			</div>
 		</header>
@@ -56,78 +56,57 @@
 						<h3>Passenger details</h3>
 						<div class="f-row">
 							<div class="one-fourth">Name and surname</div>
-							<div class="three-fourth">John Doe</div>
+							<div class="three-fourth" id="name"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">Mobile number</div>
-							<div class="three-fourth">00386 30 555 555</div>
+							<div class="three-fourth"id="num"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">Email address</div>
-							<div class="three-fourth">john.doe@email.com</div>
-						</div>
-						<div class="f-row">
-							<div class="one-fourth">Street address</div>
-							<div class="three-fourth">1036 Awesome Lane</div>
-						</div>
-						<div class="f-row">
-							<div class="one-fourth">Zip code</div>
-							<div class="three-fourth">21462</div>
-						</div>
-						<div class="f-row">
-							<div class="one-fourth">City</div>
-							<div class="three-fourth">Transferville</div>
-						</div>
-						<div class="f-row">
-							<div class="one-fourth">Country</div>
-							<div class="three-fourth">Drivingland</div>
+							<div class="three-fourth" id="email"></div>
 						</div>
 
-						<h3>Departure Transfer details</h3>
+
+						<h3>Departure details</h3>
 						<div class="f-row">
 							<div class="one-fourth">Date</div>
-							<div class="three-fourth">28.08.2014 10:00</div>
+							<div class="three-fourth" id="datetimepick"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">From</div>
-							<div class="three-fourth">London bus station</div>
+							<div class="three-fourth" id="pickup"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">To</div>
-							<div class="three-fourth">London airport</div>
+							<div class="three-fourth" id="destination"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">Vehicle</div>
-							<div class="three-fourth">Private shuttle</div>
-						</div>
-						<div class="f-row">
-							<div class="one-fourth">Extras</div>
-							<div class="three-fourth">2 pieces of baggage up to 15kg</div>
+							<div class="three-fourth"id="vehicle"></div>
 						</div>
 
-						<h3>Return Transfer details</h3>
+
+						<h3>Return details</h3>
 						<div class="f-row">
 							<div class="one-fourth">Date</div>
-							<div class="three-fourth">02.09.2014 17:00</div>
+							<div class="three-fourth"id="datetimepick2"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">From</div>
-							<div class="three-fourth">London airport</div>
+							<div class="three-fourth"id="rtn-pickup">London airport</div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">To</div>
-							<div class="three-fourth">London bus station</div>
+							<div class="three-fourth" id="rtn-destination"></div>
 						</div>
 						<div class="f-row">
 							<div class="one-fourth">Vehicle</div>
-							<div class="three-fourth">Private shuttle</div>
-						</div>
-						<div class="f-row">
-							<div class="one-fourth">Extras</div>
-							<div class="three-fourth">2 pieces of baggage up to 15kg</div>
+							<div class="three-fourth"></div>
 						</div>
 
-						<h3>Price: </h3>
+<!--
+						<h3>Price: </h3> -->
 					</form>
 				</div>
 
@@ -165,5 +144,32 @@
 	<script src="js/jquery.slicknav.min.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/scripts.js"></script>
+
+	<script>
+
+	window.onload = function(){
+
+		var time = localStorage.getItem("datetimepick");
+		var from = localStorage.getItem("pickup");
+		var to = localStorage.getItem("destination");
+		var people = localStorage.getItem("people");
+		var rtntime = localStorage.getItem("datetimepick2");
+		var rtnfrom = localStorage.getItem("rtn-pickup");
+		var rtnto = localStorage.getItem("rtn-destination");
+
+		document.getElementById('datetimepick').innerHTML = time;
+		document.getElementById('pickup').innerHTML = from;
+		document.getElementById('destination').innerHTML = to;
+
+
+		document.getElementById('datetimepick2').innerHTML = rtntime;
+		document.getElementById('rtn-pickup').innerHTML = rtnfrom;
+		document.getElementById('rtn-destination').innerHTML = rtnto;
+		}
+
+	</script>
+
+
+
   </body>
 </html>

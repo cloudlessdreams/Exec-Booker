@@ -42,13 +42,15 @@
 		<div class="output color twoway">
 			<div class="wrap">
 				<div>
-					<p id ="datetimepick" ></p>
-					<p><span id="pickup"></span>  <small>to </small><span id="destination"> </span></p>
+					<p id="datetimepick"></p>
+					<p><span class="thick" id="pickup"></span>
+						<small>to </small>
+						<span span class="thick" id="destination"> </span></p>
 				</div>
 
 				<div>
-					<p id="datetimepick2"></p>
-					<p><span id="rtn-pickup"></span>  <small>to </small><span id="rtn-destination"> </span></p>
+					<p id="datetimepick2" name='datetimepick2'></p>
+					<p><span span class="thick" id="rtn-pickup"></span>  <small>to </small><span span class="thick" id="rtn-destination"> </span></p>
 				</div>
 			</div>
 		</div>
@@ -59,7 +61,7 @@
 				<!--- Content -->
 				<div class="full-width content">
 					<h2>Passenger details</h2>
-					<p>Please ensure all of the required fields are completed at the time of booking. This information is imperative to ensure a smooth journey.<br />All fields are required.</p>
+					<p>Please ensure all of the required fields are completed at the time of booking. This information is imperative to ensure a smooth journey.</p>
 				</div>
 				<!--- //Content -->
 
@@ -85,26 +87,8 @@
 								<input type="email" id="email2" />
 							</div>
 						</div>
-						<div class="f-row">
-							<div class="one-half">
-								<label for="address">Street address</label>
-								<input type="text" id="address" />
-							</div>
-							<div class="one-half">
-								<label for="zip">Zip code</label>
-								<input type="text" id="zip" />
-							</div>
-						</div>
-						<div class="f-row">
-							<div class="one-half">
-								<label for="city">City</label>
-								<input type="text" id="city" />
-							</div>
-							<div class="one-half">
-								<label for="country">Country</label>
-								<input type="text" id="country" />
-							</div>
-						</div>
+
+
 						<div class="f-row">
 							<div class="one-half">
 								<label for="payment">Select payment type</label>
@@ -121,7 +105,7 @@
 						</div>
 
 						<div class="actions">
-							<a href="booking-step1.html" class="btn medium back">Go back</a>
+							<a href="search-results.html" class="btn medium back">Go back</a>
 							<a href="booking-step3.html" class="btn medium color right">Continue</a>
 						</div>
 					</form>
@@ -137,11 +121,11 @@
 								<h5>DEPARTURE</h5>
 								<dl>
 									<dt>Date</dt>
-									<dd id='sum-date'></dd>
+									<dd id='datesum'></dd>
 									<dt>From</dt>
-									<dd id = 'sum-from'></dd>
+									<dd id = 'picksum'></dd>
 									<dt>To</dt>
-									<dd id = 'sum-to'></dd>
+									<dd id = 'tosum'></dd>
 									<dt>Vehicle</dt>
 									<dd id=""></dd>
 								</dl>
@@ -151,18 +135,18 @@
 								<h5>RETURN</h5>
 								<dl>
 									<dt>Date</dt>
-									<dd id="sum-date2"></dd>
+									<dd id="rtndatesum"></dd>
 									<dt>From</dt>
-									<dd id="sum-rtn-from"></dd>
+									<dd id="rtnpicksum"></dd>
 									<dt>To</dt>
-									<dd id="sum-rtn-to"></dd>
+									<dd id="rtntosum"></dd>
 									<dt>Vehicle</dt>
 									<dd></dd>
 								</dl>
 							</div>
 
 							<dl class="total">
-								<dt>Total</dt>
+								<!-- <dt>Total</dt> -->
 								<dd id="sum-price"></dd>
 							</dl>
 						</div>
@@ -176,11 +160,55 @@
 	<!-- //Main -->
 
 
+
+
+
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="js/jquery.uniform.min.js"></script>
 	<script src="js/jquery.slicknav.min.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/scripts.js"></script>
+
+	<script>
+
+	window.onload = function(){
+
+		var time = localStorage.getItem("datetimepick");
+		var from = localStorage.getItem("pickup");
+		var to = localStorage.getItem("destination");
+		var people = localStorage.getItem("people");
+		var rtntime = localStorage.getItem("datetimepick2");
+		var rtnfrom = localStorage.getItem("rtn-pickup");
+		var rtnto = localStorage.getItem("rtn-destination");
+
+
+
+
+
+		document.getElementById('datetimepick').innerHTML = time;
+		document.getElementById('pickup').innerHTML = from;
+		document.getElementById('destination').innerHTML = to;
+
+
+		document.getElementById('datetimepick2').innerHTML = rtntime;
+		document.getElementById('rtn-pickup').innerHTML = rtnfrom;
+		document.getElementById('rtn-destination').innerHTML = rtnto;
+
+		document.getElementById('datesum').innerHTML = time;
+		document.getElementById('picksum').innerHTML = from;
+		document.getElementById('tosum').innerHTML = to;
+
+		document.getElementById('rtndatesum').innerHTML = rtntime;
+		document.getElementById('rtnpicksum').innerHTML = rtnfrom;
+		document.getElementById('rtntosum').innerHTML = rtnto;
+
+
+	}
+
+
+
+	</script>
   </body>
 </html>
